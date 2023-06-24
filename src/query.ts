@@ -20,6 +20,11 @@ export const getFormattedTimeString = (timestamp: number): string => {
     return new Date(timestamp * 1000).toLocaleString();
 }
 
+export type Auction = {
+    startPrice: number;
+    startTime: number;
+}
+
 export const getLenderProfitGraph = async (
     account: string,
     decimals: number,
@@ -36,14 +41,14 @@ export const getLenderProfitGraph = async (
         if (auctions.length === 0) {
             return 'No liquidations found';
         }
-        auctions.forEach(auction => {
+        auctions.forEach((auction: Auction) => {
             const startPrice = auction.startPrice / 10 ** decimals;
             const startTime = auction.startTime;
             const formattedTime = getFormattedTimeString(startTime);
             result += `${formattedTime} - liquidation auction starting at ${startPrice}\n`;
         });
         return result;
-    } catch (error) {
+    } catch (error: any) {
         console.log(error);
         return 'Error fetching data: \n' + error.message;
     }
