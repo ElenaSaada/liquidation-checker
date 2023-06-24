@@ -9,6 +9,7 @@ export const PageComponent = () => {
     const buttonCallback = async () => {
         setTextBox('Fetching data...')
         const result = await getLenderProfitGraph(account, 18);
+        setTextBox(result);
     }
 
     return  (
