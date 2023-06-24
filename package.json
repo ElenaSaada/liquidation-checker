@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.16",
     "@chakra-ui/react": "^2.7.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -16,6 +17,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "framer-motion": "^10.12.17",
+    "graphql": "^16.7.1",
     "next": "13.4.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
