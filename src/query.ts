@@ -33,6 +33,9 @@ export const getLenderProfitGraph = async (
         });
         let result = '';
         const auctions = data.auctions;
+        if (auctions.length === 0) {
+            return 'No liquidations found';
+        }
         auctions.forEach(auction => {
             const initialPrice = auction.initialPrice / 10 ** decimals;
             const startTime = auction.startTime;
