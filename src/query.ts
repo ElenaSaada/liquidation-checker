@@ -4,7 +4,7 @@ const API_URL = 'https://api.thegraph.com/subgraphs/name/yama-finance/yama-finan
 
 const auctionQuery = `
     query($vaultOwner: Bytes) {
-        auctions(first: 1000, where: { vault__owner: $vaultOwner }) {
+        auctions(first: 1000, where: { vaultOwner: $vaultOwner }) {
             startPrice
             startTime
         }
