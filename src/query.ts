@@ -4,7 +4,7 @@ const API_URL = 'https://api.thegraph.com/subgraphs/name/yama-finance/yama-finan
 
 const auctionQuery = `
     query($vaultOwner: Bytes) {
-        auctions(first: 1000, where: { vaultOwner: $vaultOwner }) {
+        auctions(first: 1000, where: { vaultAltOwner: $vaultOwner }) {
             startPrice
             startTime
         }
@@ -33,7 +33,7 @@ export const getLenderProfitGraph = async (
         const { data } = await client.query({
             query: gql(auctionQuery),
             variables: {
-                vaultOwner: account,
+                vaultOwner: account.toLowerCase(),
             },
         });
         let result = '';
