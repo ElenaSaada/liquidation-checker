@@ -27,7 +27,6 @@ export const PageComponent = () => {
                     ></Input>
                     <InputRightElement width={75}>
                         <Button
-                            backgroundColor={'#FFFFFF'}
                             onClick={buttonCallback}>
                             Check
                         </Button>
