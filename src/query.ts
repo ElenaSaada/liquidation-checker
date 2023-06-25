@@ -45,7 +45,7 @@ export const getLenderProfitGraph = async (
             const startPrice = auction.startPrice / 10 ** decimals;
             const startTime = auction.startTime;
             const formattedTime = getFormattedTimeString(startTime);
-            result += `${formattedTime} - liquidation auction starting at ${startPrice}\n`;
+            result += `${formattedTime} - liquidation auction starting at ${startPrice} YAMA\n`;
         });
         return result;
     } catch (error: any) {
